@@ -3,169 +3,176 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Curated Cinematic Log | An Art Nouveau Chronicle</title>
+  <title>THE CINEMATIC ARCHIVE | Art Deco Film Log</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* ART NOUVEAU SPECIFIC STYLING */
-    
-    @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;500;700&display=swap');
+    /* ART DECO SPECIFIC STYLING */
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Marcellus&display=swap');
 
     :root {
-      --gold: #c5a059;
-      --deep-teal: #0c2b2e;
-      --parchment: #fdf6e3;
-      --shadow-green: #081d1f;
+      --gold-primary: #d4af37;
+      --gold-light: #f3e5ab;
+      --gold-dark: #aa7c11;
+      --deco-black: #08080a;
+      --deco-surface: #121216;
     }
 
     body {
-      background-color: var(--deep-teal);
-      color: var(--parchment);
-      font-family: 'Cormorant Garamond', serif;
-      background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M0 50 C10 10, 40 10, 50 50 S90 90, 100 50 M100 50 C90 10, 60 10, 50 50 S10 90, 0 50' stroke='%23c5a059' stroke-opacity='0.08' fill='none' stroke-width='0.5'/%3E%3C/svg%3E");
+      background-color: var(--deco-black);
+      color: #e4e4e7;
+      font-family: 'Marcellus', serif;
+      /* Subtle Art Deco Fan Geometric Pattern */
+      background-image: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 80%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z' fill='none' stroke='%23d4af37' stroke-opacity='0.08' stroke-width='1'/%3E%3C/svg%3E");
       background-attachment: fixed;
     }
 
-    /* Headings */
-    h1, h2, h3, h4, .nouveau-title {
-      font-family: 'Cinzel Decorative', cursive;
-      color: var(--gold);
-      letter-spacing: 0.05em;
+    h1, h2, h3, h4, .deco-title {
+      font-family: 'Cinzel', serif;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
     }
 
-    /* Standardized Ornate Border Frame */
-    .nouveau-frame {
-      border: 2px solid var(--gold);
-      border-radius: 12px;
+    /* Metallic Gold Text Effect */
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Geometric Art Deco Card Frames */
+    .deco-card {
+      background: var(--deco-surface);
+      border: 1px solid var(--gold-primary);
       position: relative;
-      background: var(--deep-teal);
-      padding: 2rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(212, 175, 55, 0.05);
     }
 
-    .nouveau-frame::before {
-      content: '🙐'; /* Ornate Left Flourish */
+    /* Double Line Border Framing Effect */
+    .deco-card::after {
+      content: '';
       position: absolute;
-      top: -15px; left: 15px;
-      color: var(--gold);
-      font-size: 1.8rem;
-      background: var(--deep-teal);
-      padding: 0 10px;
+      top: 4px; left: 4px; right: 4px; bottom: 4px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      pointer-events: none;
     }
 
-    .nouveau-frame::after {
-      content: '🙒'; /* Ornate Right Flourish */
+    /* Stepped Geometric Corner Accents */
+    .deco-corner {
       position: absolute;
-      bottom: -15px; right: 15px;
-      color: var(--gold);
-      font-size: 1.8rem;
-      background: var(--deep-teal);
-      padding: 0 10px;
+      width: 12px;
+      height: 12px;
+      border-color: var(--gold-primary);
+      z-index: 10;
     }
+    .top-left { top: -2px; left: -2px; border-top: 3px solid; border-left: 3px solid; }
+    .top-right { top: -2px; right: -2px; border-top: 3px solid; border-right: 3px solid; }
+    .bottom-left { bottom: -2px; left: -2px; border-bottom: 3px solid; border-left: 3px solid; }
+    .bottom-right { bottom: -2px; right: -2px; border-bottom: 3px solid; border-right: 3px solid; }
 
-    /* Form Fields - Organic Underlines */
-    input, textarea, select {
-      background: none !important;
-      border: none !important;
-      border-bottom: 2px solid rgba(197, 160, 89, 0.3) !important;
-      color: var(--parchment) !important;
-      border-radius: 0 !important;
-      padding-left: 0 !important;
-      transition: border-color 0.4s ease, box-shadow 0.4s ease;
+    /* Art Deco Inputs */
+    input, textarea {
+      background: rgba(8, 8, 10, 0.8) !important;
+      border: 1px solid rgba(212, 175, 55, 0.4) !important;
+      color: #f3e5ab !important;
+      transition: all 0.3s ease;
+      font-family: 'Marcellus', serif;
     }
 
     input:focus, textarea:focus {
       outline: none !important;
-      border-bottom-color: var(--gold) !important;
-      box-shadow: 0 4px 12px rgba(197, 160, 89, 0.2) !important;
+      border-color: var(--gold-primary) !important;
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.3) !important;
     }
 
-    ::placeholder {
-      color: rgba(253, 246, 227, 0.5) !important;
-      font-style: italic;
-    }
-
-    /* Golden Button with Flowing Hover */
-    .nouveau-btn {
-      background: none;
-      border: 2px solid var(--gold);
-      color: var(--gold);
-      font-family: 'Cinzel Decorative', cursive;
-      font-weight: bold;
-      border-radius: 30px;
-      padding: 12px 30px;
-      cursor: pointer;
+    /* Deco Button */
+    .deco-btn {
+      background: linear-gradient(180deg, rgba(212, 175, 55, 0.15) 0%, rgba(8, 8, 10, 0.9) 100%);
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-light);
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.2em;
+      transition: all 0.3s ease;
       position: relative;
-      overflow: hidden;
-      transition: all 0.5s ease;
-      display: flex; align-items: center; justify-content: center; gap: 8px;
     }
 
-    .nouveau-btn:hover {
-      color: var(--shadow-green);
-      background-color: var(--gold);
-      box-shadow: 0 0 20px rgba(197, 160, 89, 0.6);
+    .deco-btn:hover {
+      background: var(--gold-primary);
+      color: var(--deco-black);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+      font-weight: bold;
     }
 
-    /* Star Ratings */
+    /* Star Rating */
     .star-rating button {
-      transition: color 0.3s ease, transform 0.3s ease;
-      color: rgba(197, 160, 89, 0.3);
+      transition: all 0.2s ease;
+      color: rgba(212, 175, 55, 0.2);
     }
     .star-rating button:hover, .star-rating button.active {
-      color: var(--gold);
-      transform: scale(1.1) translateY(-2px);
-      text-shadow: 0 0 12px rgba(197, 160, 89, 0.7);
+      color: var(--gold-primary);
+      text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
     }
-
-    /* Comment Cards */
-    .comment-card {
-      background: rgba(8, 29, 31, 0.6);
-      border-left: 3px solid var(--gold);
-      border-radius: 4px;
-      margin-bottom: 1rem;
-    }
-
-    /* Make page longer/spaced out */
-    main section { margin-bottom: 8rem; }
   </style>
 </head>
-<body>
+<body class="min-h-screen pb-24">
 
-  <!-- Fullscreen Introductory Title Area (Makes page feel grand) -->
-  <div class="h-[90vh] flex flex-col items-center justify-center text-center px-6 relative border-b-2 border-gold/20">
-    <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Cpath d=\'M50 0 C60 30, 90 40, 50 100 C10 40, 40 30, 50 0\' stroke=\'%23c5a059\' fill=\'none\' stroke-width=\'0.3\'/%3E%3C/svg%3E'); background-size: 150px; background-attachment: fixed;"></div>
+  <!-- Art Deco Central Header Banner -->
+  <header class="pt-16 pb-12 px-4 text-center border-b border-yellow-600/30 relative">
     
-    <span class="block text-xl uppercase tracking-[.4em] text-gold/60 mb-6 font-medium">The Personal Journal of</span>
-    
-    <h1 class="text-6xl md:text-8xl font-extrabold tracking-tight leading-none mb-8">
-      The Curated<br>
-      <span class="text-parchment/90">Cinematic Log</span>
-    
-    <div class="text-6xl text-gold/40 mt-12 animate-bounce">🙐 🙒</div>
-  </div>
+    <!-- Top Geometric Line Art Motif -->
+    <div class="flex items-center justify-center gap-4 mb-4 text-yellow-600/60">
+      <div class="h-px w-16 bg-gradient-to-r from-transparent to-yellow-600"></div>
+      <span class="text-xl">◆</span>
+      <div class="h-2 w-2 rotate-45 border border-yellow-600"></div>
+      <span class="text-xl">◆</span>
+      <div class="h-px w-16 bg-gradient-to-l from-transparent to-yellow-600"></div>
+    </div>
 
-  <main class="max-w-6xl mx-auto px-6 pt-24">
+    <!-- MAIN TITLE FRONT & CENTER -->
+    <div class="inline-block relative px-8 py-4">
+      <p class="text-xs tracking-[0.4em] uppercase text-yellow-500/70 mb-2">Private Viewing Gazette</p>
+      <h1 class="text-4xl md:text-6xl font-black gold-gradient-text tracking-[0.25em] py-2">
+        THE CINEMATIC LOG
+      </h1>
+      <p class="text-sm tracking-[0.2em] text-zinc-400 mt-2 italic">EST. MCMXXVI</p>
+    </div>
 
-    <!-- Section 1: The Ritual (Logging Form) -->
-    <section class="grid grid-cols-1 md:grid-cols-5 gap-16 items-start">
-      
-      <div class="md:col-span-2 sticky top-24 nouveau-frame">
-        <h2 class="text-3xl font-bold mb-8 text-center border-b border-gold/30 pb-4">Chronicle a Film</h2>
-        
-        <form id="movieForm" class="flex flex-col gap-8">
-          <div class="relative">
-            <label class="block text-sm font-semibold text-gold/80 mb-2 uppercase tracking-wider">Title of the Work</label>
-            <input type="text" id="movieTitle" required placeholder="e.g. Moonlight (2016)" class="w-full text-lg">
-          </div>
+    <!-- Bottom Motif Fan -->
+    <div class="flex items-center justify-center gap-2 mt-4 text-yellow-600/60">
+      <div class="h-px w-32 bg-gradient-to-r from-transparent via-yellow-600 to-transparent"></div>
+    </div>
+  </header>
 
-          <div class="relative">
-            <label class="block text-sm font-semibold text-gold/80 mb-2 uppercase tracking-wider">Visual Poster Address (URL)</label>
-            <input type="url" id="moviePoster" placeholder="https://image-url.jpg" class="w-full">
+  <!-- Main App Interface -->
+  <main class="max-w-6xl mx-auto px-6 pt-12 grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+    <!-- Sidebar / Logging Form (Art Deco Styled) -->
+    <section class="lg:col-span-4">
+      <div class="deco-card p-6 rounded-none sticky top-8">
+        <!-- Corner Steps -->
+        <div class="deco-corner top-left"></div>
+        <div class="deco-corner top-right"></div>
+        <div class="deco-corner bottom-left"></div>
+        <div class="deco-corner bottom-right"></div>
+
+        <h2 class="text-xl font-bold text-center gold-gradient-text mb-6 pb-3 border-b border-yellow-600/30">
+          Inscribe Entry
+        </h2>
+
+        <form id="movieForm" class="flex flex-col gap-5">
+          <div>
+            <label class="block text-xs uppercase tracking-[0.2em] text-yellow-500/80 mb-2">Film Title</label>
+            <input type="text" id="movieTitle" required placeholder="e.g. Metropolis" class="w-full px-3 py-2 text-sm">
           </div>
 
           <div>
-            <label class="block text-sm font-semibold text-gold/80 mb-2 uppercase tracking-wider">Aesthetic Merit</label>
-            <div id="starInput" class="star-rating flex gap-2 text-4xl mt-1">
+            <label class="block text-xs uppercase tracking-[0.2em] text-yellow-500/80 mb-2">Poster URL</label>
+            <input type="url" id="moviePoster" placeholder="https://..." class="w-full px-3 py-2 text-sm">
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase tracking-[0.2em] text-yellow-500/80 mb-2">Rating</label>
+            <div id="starInput" class="star-rating flex gap-2 text-2xl">
               <button type="button" data-value="1">★</button>
               <button type="button" data-value="2">★</button>
               <button type="button" data-value="3">★</button>
@@ -175,55 +182,36 @@
             <input type="hidden" id="selectedRating" value="5">
           </div>
 
-          <div class="relative">
-            <label class="block text-sm font-semibold text-gold/80 mb-2 uppercase tracking-wider">Critical Reflection</label>
-            <textarea id="movieReview" rows="5" required placeholder="Describe the impact, the art, the philosophy..." class="w-full text-base leading-relaxed"></textarea>
+          <div>
+            <label class="block text-xs uppercase tracking-[0.2em] text-yellow-500/80 mb-2">Critique</label>
+            <textarea id="movieReview" rows="4" required placeholder="Write your assessment..." class="w-full px-3 py-2 text-sm"></textarea>
           </div>
 
-          <button type="submit" class="nouveau-btn mt-6 text-xl">
-            Inscribe into Log
+          <button type="submit" class="deco-btn py-3 mt-2 text-xs uppercase font-bold">
+            Add To Archive
           </button>
         </form>
       </div>
-
-      <div class="md:col-span-3">
-        <!-- Vertical divider line subtly integrated into the layout -->
-        <div class="hidden md:block absolute left-[40%] top-[90vh] bottom-0 w-px bg-gold/15"></div>
-      </div>
     </section>
 
-    <!-- Section 2: The Chronicle (Feed) -->
-    <section>
-      <div class="text-center mb-16">
-        <div class="w-24 h-px bg-gold/40 mx-auto mb-6"></div>
-        <h2 class="text-5xl font-bold tracking-tight">The Ledger of Viewings</h2>
-        <p class="text-parchment/60 mt-4 text-lg italic max-w-xl mx-auto">A flowing record of captured moments and philosophical discussions.</p>
-        <div class="w-24 h-px bg-gold/40 mx-auto mt-6"></div>
-      </div>
-
-      <div class="flex flex-col gap-12" id="reviewsContainer">
-        <!-- Reviews will dynamically render here -->
-      </div>
+    <!-- Main Feed / Movie List -->
+    <section class="lg:col-span-8 flex flex-col gap-8" id="reviewsContainer">
+      <!-- Art Deco Review Cards dynamically injected here -->
     </section>
 
   </main>
 
-  <footer class="text-center py-12 mt-20 border-t border-gold/15">
-    <div class="text-5xl text-gold/30 mb-4">🙐 🎬 🙒</div>
-    <p class="text-xs text-gold/60 uppercase tracking-widest">Designed by Art Nouveau | Coded by Gemini</p>
-  </footer>
-
   <script>
-    // Placeholder initial review (feel free to remove)
+    // Sample initial Art Deco Entry
     const sampleReviews = [
       {
         id: 1,
-        title: "Blade Runner (1982)",
-        poster: "https://images.unsplash.com/photo-1549887552-cb1071d3e5ca?q=80&w=600&auto=format&fit=crop",
+        title: "THE GREAT GATSBY",
+        poster: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=600&auto=format&fit=crop",
         rating: 5,
-        review: "A haunting synthesis of neo-noir and existential wonder. Every frame is composed like a classical painting, exploring the very essence of human soul and memory. Unforgettable atmosphere.",
+        review: "A breathtaking visual spectacle bathed in opulence, tragic romance, and dazzling jazz-age grandiosity. Every frame captures the roaring splendor of the era.",
         comments: [
-          { name: "Julian", text: "The production design still holds up against anything made today." }
+          { name: "DAISY", text: "Truly dazzling. A masterpiece of production design." }
         ]
       }
     ];
@@ -243,15 +231,12 @@
     function updateStarUI(rating) {
       starButtons.forEach((btn, idx) => {
         if (idx < rating) {
-          btn.classList.add('text-amber-500', 'active');
-          btn.classList.remove('text-zinc-600');
+          btn.classList.add('active');
         } else {
-          btn.classList.remove('text-amber-500', 'active');
-          btn.classList.add('text-zinc-600');
+          btn.classList.remove('active');
         }
       });
     }
-    // Initialize stars to 5 by default
     updateStarUI(5);
 
     // Render Movie Reviews Feed
@@ -260,49 +245,53 @@
       container.innerHTML = '';
 
       sampleReviews.forEach(item => {
-        const starsHtml = '★'.repeat(item.rating) + '<span style="opacity:0.25;">' + '★'.repeat(5 - item.rating) + '</span>';
-        const posterUrl = item.poster || 'https://via.placeholder.com/300x450/0c2b2e/c5a059?text=Visual+Absent';
+        const starsHtml = '★'.repeat(item.rating) + '☆'.repeat(5 - item.rating);
+        const posterUrl = item.poster || 'https://via.placeholder.com/300x450/08080a/d4af37?text=NO+IMAGE';
 
         const card = document.createElement('article');
-        card.className = "nouveau-frame grid grid-cols-1 sm:grid-cols-3 gap-8 overflow-hidden";
+        card.className = "deco-card p-6 grid grid-cols-1 sm:grid-cols-12 gap-6 relative";
         
         card.innerHTML = `
+          <!-- Corner Steps -->
+          <div class="deco-corner top-left"></div>
+          <div class="deco-corner top-right"></div>
+          <div class="deco-corner bottom-left"></div>
+          <div class="deco-corner bottom-right"></div>
+
           <!-- Poster Column -->
-          <div class="sm:col-span-1 border-4 border-double border-gold/40 p-2 bg-black/40 rounded-lg shadow-inner">
-            <img src="${posterUrl}" alt="${item.title}" class="w-full h-full object-cover rounded">
+          <div class="sm:col-span-4 border border-yellow-600/40 p-1 bg-black/60">
+            <img src="${posterUrl}" alt="${item.title}" class="w-full h-full object-cover">
           </div>
 
           <!-- Content Column -->
-          <div class="sm:col-span-2 flex flex-col justify-between">
+          <div class="sm:col-span-8 flex flex-col justify-between">
             <div>
-              <div class="flex items-center justify-between gap-4 mb-3 border-b border-gold/20 pb-2">
-                <h3 class="text-3xl font-extrabold tracking-tight text-parchment">${item.title}</h3>
-                <span class="text-gold font-bold tracking-tight text-3xl whitespace-nowrap">${starsHtml}</span>
+              <div class="flex items-start justify-between border-b border-yellow-600/30 pb-3 mb-3">
+                <h3 class="text-xl font-bold gold-gradient-text tracking-widest">${item.title}</h3>
+                <span class="text-yellow-500 font-bold tracking-widest text-lg">${starsHtml}</span>
               </div>
-              <p class="text-parchment/90 text-base leading-relaxed mb-8 italic">${item.review}</p>
+              <p class="text-zinc-300 text-sm leading-relaxed mb-6">${item.review}</p>
             </div>
 
             <!-- Comment Section -->
-            <div class="border-t border-gold/30 pt-6 mt-auto">
-              <h4 class="text-sm font-semibold text-gold/80 mb-4 tracking-wider uppercase flex items-center gap-2">
-                <span class="text-xl">🗣</span> Philosophical Discourse (${item.comments.length})
-              </h4>
+            <div class="border-t border-yellow-600/30 pt-4">
+              <h4 class="text-xs uppercase tracking-[0.2em] text-yellow-500/80 mb-3">Discourse (${item.comments.length})</h4>
               
               <!-- Existing Comments -->
-              <div class="space-y-3 mb-6 max-h-48 overflow-y-auto pr-2 custom-scrollbar">
+              <div class="space-y-2 mb-4 max-h-36 overflow-y-auto pr-1">
                 ${item.comments.map(c => `
-                  <div class="comment-card p-4 text-sm leading-relaxed">
-                    <span class="font-bold text-gold">${c.name}—</span> 
-                    <span class="text-parchment/90">${c.text}</span>
+                  <div class="bg-black/50 border-l-2 border-yellow-600 p-2 text-xs">
+                    <span class="font-bold text-yellow-500 tracking-wider">${c.name}:</span> 
+                    <span class="text-zinc-300">${c.text}</span>
                   </div>
                 `).join('')}
               </div>
 
-              <!-- Add Comment Input -->
-              <form onsubmit="addComment(event, ${item.id})" class="flex gap-3 nouveau-comment-form">
-                <input type="text" placeholder="Your Name" required class="comment-name w-1/4">
-                <input type="text" placeholder="Offer your perspective..." required class="comment-text w-3/4">
-                <button type="submit" class="nouveau-btn !py-1 !px-4 !text-xs !border">Post</button>
+              <!-- Add Comment Form -->
+              <form onsubmit="addComment(event, ${item.id})" class="flex gap-2">
+                <input type="text" placeholder="NAME" required class="comment-name w-1/3 px-2 py-1 text-xs uppercase">
+                <input type="text" placeholder="ADD COMMENT..." required class="comment-text w-2/3 px-2 py-1 text-xs">
+                <button type="submit" class="deco-btn px-3 py-1 text-[10px] uppercase">Post</button>
               </form>
             </div>
           </div>
@@ -312,37 +301,33 @@
       });
     }
 
-    // Handle Adding a New Movie Review
+    // Handle Form Submit
     document.getElementById('movieForm').addEventListener('submit', (e) => {
       e.preventDefault();
-      const title = document.getElementById('movieTitle').value;
+      const title = document.getElementById('movieTitle').value.toUpperCase();
       const poster = document.getElementById('moviePoster').value;
       const rating = parseInt(document.getElementById('selectedRating').value);
       const review = document.getElementById('movieReview').value;
 
-      const newReview = {
+      sampleReviews.unshift({
         id: Date.now(),
         title,
         poster,
         rating,
         review,
         comments: []
-      };
+      });
 
-      sampleReviews.unshift(newReview);
       renderReviews();
-
-      // Reset Form and scroll down to the feed automatically
       e.target.reset();
       updateStarUI(5);
-      window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
     });
 
-    // Handle Adding a Visitor Comment
+    // Handle Comments
     function addComment(e, movieId) {
       e.preventDefault();
       const form = e.target;
-      const name = form.querySelector('.comment-name').value;
+      const name = form.querySelector('.comment-name').value.toUpperCase();
       const text = form.querySelector('.comment-text').value;
 
       const movie = sampleReviews.find(m => m.id === movieId);
@@ -352,7 +337,6 @@
       }
     }
 
-    // Initial Render
     renderReviews();
   </script>
 </body>
