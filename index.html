@@ -21,7 +21,6 @@
       background-color: var(--deco-black);
       color: #e4e4e7;
       font-family: 'Marcellus', serif;
-      /* Subtle Art Deco Fan Geometric Pattern */
       background-image: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 80%),
         url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z' fill='none' stroke='%23d4af37' stroke-opacity='0.08' stroke-width='1'/%3E%3C/svg%3E");
       background-attachment: fixed;
@@ -33,14 +32,12 @@
       letter-spacing: 0.15em;
     }
 
-    /* Metallic Gold Text Effect */
     .gold-gradient-text {
       background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    /* Geometric Art Deco Card Frames */
     .deco-card {
       background: var(--deco-surface);
       border: 1px solid var(--gold-primary);
@@ -48,7 +45,6 @@
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(212, 175, 55, 0.05);
     }
 
-    /* Double Line Border Framing Effect */
     .deco-card::after {
       content: '';
       position: absolute;
@@ -57,7 +53,6 @@
       pointer-events: none;
     }
 
-    /* Stepped Geometric Corner Accents */
     .deco-corner {
       position: absolute;
       width: 12px;
@@ -70,8 +65,7 @@
     .bottom-left { bottom: -2px; left: -2px; border-bottom: 3px solid; border-left: 3px solid; }
     .bottom-right { bottom: -2px; right: -2px; border-bottom: 3px solid; border-right: 3px solid; }
 
-    /* Art Deco Inputs */
-    input, textarea {
+    input, textarea, select {
       background: rgba(8, 8, 10, 0.8) !important;
       border: 1px solid rgba(212, 175, 55, 0.4) !important;
       color: #f3e5ab !important;
@@ -79,13 +73,12 @@
       font-family: 'Marcellus', serif;
     }
 
-    input:focus, textarea:focus {
+    input:focus, textarea:focus, select:focus {
       outline: none !important;
       border-color: var(--gold-primary) !important;
       box-shadow: 0 0 10px rgba(212, 175, 55, 0.3) !important;
     }
 
-    /* Deco Button */
     .deco-btn {
       background: linear-gradient(180deg, rgba(212, 175, 55, 0.15) 0%, rgba(8, 8, 10, 0.9) 100%);
       border: 1px solid var(--gold-primary);
@@ -96,14 +89,13 @@
       position: relative;
     }
 
-    .deco-btn:hover {
+    .deco-btn:hover, .nav-btn.active {
       background: var(--gold-primary);
-      color: var(--deco-black);
+      color: var(--deco-black) !important;
       box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
       font-weight: bold;
     }
 
-    /* Star Rating */
     .star-rating button {
       transition: all 0.2s ease;
       color: rgba(212, 175, 55, 0.2);
@@ -112,232 +104,448 @@
       color: var(--gold-primary);
       text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
     }
+
+    .sidebar-deco {
+      background: var(--deco-surface);
+      border-right: 1px solid var(--gold-primary);
+      box-shadow: 10px 0 25px rgba(0,0,0,0.8);
+    }
   </style>
 </head>
-<body class="min-h-screen pb-24">
+<body class="min-h-screen pb-24 flex">
 
-  <!-- Art Deco Central Header Banner -->
-  <header class="pt-16 pb-12 px-4 text-center border-b border-yellow-600/30 relative">
-    
-    <!-- Top Geometric Line Art Motif -->
-    <div class="flex items-center justify-center gap-4 mb-4 text-yellow-600/60">
-      <div class="h-px w-16 bg-gradient-to-r from-transparent to-yellow-600"></div>
-      <span class="text-xl">◆</span>
-      <div class="h-2 w-2 rotate-45 border border-yellow-600"></div>
-      <span class="text-xl">◆</span>
-      <div class="h-px w-16 bg-gradient-to-l from-transparent to-yellow-600"></div>
-    </div>
-
-    <!-- MAIN TITLE FRONT & CENTER -->
-    <div class="inline-block relative px-8 py-4">
-      <p class="text-xs tracking-[0.4em] uppercase text-yellow-500/70 mb-2">Private Viewing Gazette</p>
-      <h1 class="text-4xl md:text-6xl font-black gold-gradient-text tracking-[0.25em] py-2">
-        THE CINEMATIC LOG
-      </h1>
-      <p class="text-sm tracking-[0.2em] text-zinc-400 mt-2 italic">EST. MCMXXVI</p>
-    </div>
-
-    <!-- Bottom Motif Fan -->
-    <div class="flex items-center justify-center gap-2 mt-4 text-yellow-600/60">
-      <div class="h-px w-32 bg-gradient-to-r from-transparent via-yellow-600 to-transparent"></div>
-    </div>
-  </header>
-
-  <!-- Main App Interface -->
-  <main class="max-w-6xl mx-auto px-6 pt-12 grid grid-cols-1 lg:grid-cols-12 gap-10">
-
-    <!-- Sidebar / Logging Form (Art Deco Styled) -->
-    <section class="lg:col-span-4">
-      <div class="deco-card p-6 rounded-none sticky top-8">
-        <!-- Corner Steps -->
-        <div class="deco-corner top-left"></div>
-        <div class="deco-corner top-right"></div>
-        <div class="deco-corner bottom-left"></div>
-        <div class="deco-corner bottom-right"></div>
-
-        <h2 class="text-xl font-bold text-center gold-gradient-text mb-6 pb-3 border-b border-yellow-600/30">
-          Inscribe Entry
-        </h2>
-
-        <form id="movieForm" class="flex flex-col gap-5">
-          <div>
-            <label class="block text-xs uppercase tracking-[0.2em] text-yellow-500/80 mb-2">Film Title</label>
-            <input type="text" id="movieTitle" required placeholder="e.g. Metropolis" class="w-full px-3 py-2 text-sm">
-          </div>
-
-          <div>
-            <label class="block text-xs uppercase tracking-[0.2em] text-yellow-500/80 mb-2">Poster URL</label>
-            <input type="url" id="moviePoster" placeholder="https://..." class="w-full px-3 py-2 text-sm">
-          </div>
-
-          <div>
-            <label class="block text-xs uppercase tracking-[0.2em] text-yellow-500/80 mb-2">Rating</label>
-            <div id="starInput" class="star-rating flex gap-2 text-2xl">
-              <button type="button" data-value="1">★</button>
-              <button type="button" data-value="2">★</button>
-              <button type="button" data-value="3">★</button>
-              <button type="button" data-value="4">★</button>
-              <button type="button" data-value="5">★</button>
-            </div>
-            <input type="hidden" id="selectedRating" value="5">
-          </div>
-
-          <div>
-            <label class="block text-xs uppercase tracking-[0.2em] text-yellow-500/80 mb-2">Critique</label>
-            <textarea id="movieReview" rows="4" required placeholder="Write your assessment..." class="w-full px-3 py-2 text-sm"></textarea>
-          </div>
-
-          <button type="submit" class="deco-btn py-3 mt-2 text-xs uppercase font-bold">
-            Add To Archive
-          </button>
-        </form>
+  <!-- SIDEBAR NAVIGATION -->
+  <aside class="sidebar-deco fixed left-0 top-0 bottom-0 w-64 z-50 flex flex-col justify-between p-6">
+    <div class="space-y-8">
+      <div class="text-center pb-6 border-b border-yellow-600/30">
+        <div class="text-yellow-600 text-2xl mb-1">◆ 🙐 ◆</div>
+        <h2 class="text-sm tracking-[0.25em] gold-gradient-text font-bold uppercase">Navigation</h2>
       </div>
-    </section>
 
-    <!-- Main Feed / Movie List -->
-    <section class="lg:col-span-8 flex flex-col gap-8" id="reviewsContainer">
-      <!-- Art Deco Review Cards dynamically injected here -->
-    </section>
+      <nav class="flex flex-col gap-4">
+        <button onclick="switchTab('reviews')" id="nav-reviews" class="nav-btn deco-btn active w-full py-3 px-4 text-left text-xs uppercase flex items-center gap-3">
+          <span>🎬</span> Film Ledger
+        </button>
 
-  </main>
+        <button onclick="switchTab('art')" id="nav-art" class="nav-btn deco-btn w-full py-3 px-4 text-left text-xs uppercase flex items-center gap-3">
+          <span>🖼️</span> Poster Gallery
+        </button>
 
-  <script>
-    // Sample initial Art Deco Entry
-    const sampleReviews = [
-      {
-        id: 1,
-        title: "THE GREAT GATSBY",
-        poster: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=600&auto=format&fit=crop",
-        rating: 5,
-        review: "A breathtaking visual spectacle bathed in opulence, tragic romance, and dazzling jazz-age grandiosity. Every frame captures the roaring splendor of the era.",
-        comments: [
-          { name: "DAISY", text: "Truly dazzling. A masterpiece of production design." }
-        ]
-      }
-    ];
+        <button onclick="switchTab('discussion')" id="nav-discussion" class="nav-btn deco-btn w-full py-3 px-4 text-left text-xs uppercase flex items-center gap-3">
+          <span>🏛️</span> The Salon
+        </button>
+      </nav>
+    </div>
 
-    let currentRating = 5;
+    <div class="text-center text-xs text-yellow-600/50 tracking-widest border-t border-yellow-600/30 pt-4">
+      MCMXXVI
+    </div>
+  </aside>
 
-    // Handle Star Rating Click Behavior
-    const starButtons = document.querySelectorAll('#starInput button');
-    starButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        currentRating = parseInt(btn.dataset.value);
-        document.getElementById('selectedRating').value = currentRating;
-        updateStarUI(currentRating);
-      });
-    });
+  <!-- MAIN CONTAINER -->
+  <div class="flex-1 ml-64">
 
-    function updateStarUI(rating) {
-      starButtons.forEach((btn, idx) => {
-        if (idx < rating) {
-          btn.classList.add('active');
-        } else {
-          btn.classList.remove('active');
-        }
-      });
-    }
-    updateStarUI(5);
+    <!-- HEADER BANNER -->
+    <header class="pt-12 pb-8 px-4 text-center border-b border-yellow-600/30 relative">
+      <div class="flex items-center justify-center gap-4 mb-4 text-yellow-600/60">
+        <div class="h-px w-16 bg-gradient-to-r from-transparent to-yellow-600"></div>
+        <span class="text-xl">◆</span>
+        <div class="h-2 w-2 rotate-45 border border-yellow-600"></div>
+        <span class="text-xl">◆</span>
+        <div class="h-px w-16 bg-gradient-to-l from-transparent to-yellow-600"></div>
+      </div>
 
-    // Render Movie Reviews Feed
-    function renderReviews() {
-      const container = document.getElementById('reviewsContainer');
-      container.innerHTML = '';
+      <div class="inline-block relative px-8 py-2">
+        <p class="text-xs tracking-[0.4em] uppercase text-yellow-500/70 mb-1">Private Viewing Gazette</p>
+        <h1 class="text-4xl md:text-5xl font-black gold-gradient-text tracking-[0.25em]">
+          THE CINEMATIC LOG
+        </h1>
+        <p class="text-xs tracking-[0.2em] text-zinc-400 mt-2 italic" id="page-subtitle">EST. MCMXXVI — FILM REVIEWS & ARCHIVE</p>
+      </div>
 
-      sampleReviews.forEach(item => {
-        const starsHtml = '★'.repeat(item.rating) + '☆'.repeat(5 - item.rating);
-        const posterUrl = item.poster || 'https://via.placeholder.com/300x450/08080a/d4af37?text=NO+IMAGE';
+      <div class="flex items-center justify-center gap-2 mt-4 text-yellow-600/60">
+        <div class="h-px w-32 bg-gradient-to-r from-transparent via-yellow-600 to-transparent"></div>
+      </div>
+    </header>
 
-        const card = document.createElement('article');
-        card.className = "deco-card p-6 grid grid-cols-1 sm:grid-cols-12 gap-6 relative";
-        
-        card.innerHTML = `
-          <!-- Corner Steps -->
+    <!-- PAGE 1: FILM LEDGER -->
+    <main id="tab-reviews" class="tab-content max-w-6xl mx-auto px-6 pt-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+      
+      <!-- Left Column: Form -->
+      <section class="lg:col-span-4">
+        <div class="deco-card p-5 rounded-none sticky top-6">
           <div class="deco-corner top-left"></div>
           <div class="deco-corner top-right"></div>
           <div class="deco-corner bottom-left"></div>
           <div class="deco-corner bottom-right"></div>
 
-          <!-- Poster Column -->
-          <div class="sm:col-span-4 border border-yellow-600/40 p-1 bg-black/60">
+          <h2 class="text-lg font-bold text-center gold-gradient-text mb-4 pb-2 border-b border-yellow-600/30">
+            Inscribe Entry
+          </h2>
+
+          <form id="movieForm" class="flex flex-col gap-4">
+            <div>
+              <label class="block text-[10px] uppercase tracking-[0.2em] text-yellow-500/80 mb-1">Film Title</label>
+              <input type="text" id="movieTitle" required placeholder="e.g. Metropolis" class="w-full px-3 py-1.5 text-xs">
+            </div>
+
+            <!-- Media Input: URL or Local Upload -->
+            <div>
+              <label class="block text-[10px] uppercase tracking-[0.2em] text-yellow-500/80 mb-1">Poster Image</label>
+              <input type="url" id="moviePoster" placeholder="URL (https://...)" class="w-full px-3 py-1.5 text-xs mb-2">
+              <div class="text-center text-[10px] text-yellow-600/60 my-1">— OR UPLOAD FILE —</div>
+              <input type="file" id="moviePosterFile" accept="image/*" class="w-full text-xs text-yellow-500/80 file:mr-2 file:py-1 file:px-2 file:border file:border-yellow-600/50 file:bg-black file:text-yellow-500 file:text-[10px]">
+            </div>
+
+            <div>
+              <label class="block text-[10px] uppercase tracking-[0.2em] text-yellow-500/80 mb-1">Rating</label>
+              <div id="starInput" class="star-rating flex gap-1 text-xl">
+                <button type="button" data-value="1">★</button>
+                <button type="button" data-value="2">★</button>
+                <button type="button" data-value="3">★</button>
+                <button type="button" data-value="4">★</button>
+                <button type="button" data-value="5">★</button>
+              </div>
+              <input type="hidden" id="selectedRating" value="5">
+            </div>
+
+            <div>
+              <label class="block text-[10px] uppercase tracking-[0.2em] text-yellow-500/80 mb-1">Critique</label>
+              <textarea id="movieReview" rows="3" required placeholder="Write your assessment..." class="w-full px-3 py-1.5 text-xs"></textarea>
+            </div>
+
+            <button type="submit" class="deco-btn py-2 text-xs uppercase font-bold">
+              Add To Archive
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Right Column: Controls Bar + Reviews List -->
+      <section class="lg:col-span-8 flex flex-col gap-6">
+
+        <!-- SEARCH, FILTER & SORT CONTROLS BAR -->
+        <div class="deco-card p-4 flex flex-col md:flex-row gap-3 items-center justify-between">
+          <div class="deco-corner top-left"></div>
+          <div class="deco-corner top-right"></div>
+          <div class="deco-corner bottom-left"></div>
+          <div class="deco-corner bottom-right"></div>
+
+          <!-- Search Bar -->
+          <input type="text" id="searchInput" oninput="applyFiltersAndSort()" placeholder="SEARCH TITLE OR TEXT..." class="w-full md:w-1/2 px-3 py-1.5 text-xs uppercase">
+
+          <!-- Star Filter Dropdown -->
+          <select id="filterRating" onchange="applyFiltersAndSort()" class="w-full md:w-1/4 px-2 py-1.5 text-xs uppercase">
+            <option value="ALL">ALL RATINGS</option>
+            <option value="5">5 STARS ONLY</option>
+            <option value="4">4 STARS ONLY</option>
+            <option value="3">3 STARS ONLY</option>
+            <option value="2">2 STARS ONLY</option>
+            <option value="1">1 STAR ONLY</option>
+          </select>
+
+          <!-- Sorting Dropdown -->
+          <select id="sortOption" onchange="applyFiltersAndSort()" class="w-full md:w-1/4 px-2 py-1.5 text-xs uppercase">
+            <option value="NEWEST">NEWEST FIRST</option>
+            <option value="OLDEST">OLDEST FIRST</option>
+            <option value="HIGHEST">HIGHEST RATED</option>
+            <option value="LOWEST">LOWEST RATED</option>
+          </select>
+        </div>
+
+        <!-- Dynamic Reviews Feed -->
+        <div class="flex flex-col gap-6" id="reviewsContainer">
+          <!-- Injected via JavaScript -->
+        </div>
+      </section>
+
+    </main>
+
+    <!-- PAGE 2: ART GALLERY -->
+    <main id="tab-art" class="tab-content hidden max-w-6xl mx-auto px-6 pt-8">
+      <div class="text-center mb-8">
+        <h2 class="text-xl font-bold gold-gradient-text tracking-widest uppercase">The Poster Exhibition</h2>
+        <p class="text-[10px] text-yellow-500/70 tracking-widest uppercase mt-1">A curated gallery of film artwork</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="artGalleryContainer">
+        <!-- Rendered Dynamically -->
+      </div>
+    </main>
+
+    <!-- PAGE 3: DISCUSSION SALON -->
+    <main id="tab-discussion" class="tab-content hidden max-w-4xl mx-auto px-6 pt-8">
+      <div class="deco-card p-6 relative">
+        <div class="deco-corner top-left"></div>
+        <div class="deco-corner top-right"></div>
+        <div class="deco-corner bottom-left"></div>
+        <div class="deco-corner bottom-right"></div>
+
+        <h2 class="text-xl font-bold text-center gold-gradient-text mb-1 tracking-widest uppercase">The Cinema Salon</h2>
+        <p class="text-center text-[10px] text-yellow-500/70 tracking-widest uppercase mb-6 pb-3 border-b border-yellow-600/30">
+          Open community dialogue on cinematic aesthetics
+        </p>
+
+        <!-- Forum Threads -->
+        <div class="space-y-4 mb-6 max-h-96 overflow-y-auto pr-2" id="generalForumContainer">
+          <!-- Rendered Dynamically -->
+        </div>
+
+        <!-- Add Forum Post Form -->
+        <form id="forumForm" class="flex flex-col gap-3 border-t border-yellow-600/30 pt-4">
+          <div class="flex flex-col sm:flex-row gap-3">
+            <input type="text" id="forumName" placeholder="YOUR NAME" required class="sm:w-1/3 px-3 py-1.5 text-xs uppercase">
+            <input type="text" id="forumText" placeholder="SHARE A CINEMATIC THOUGHT..." required class="sm:w-2/3 px-3 py-1.5 text-xs">
+          </div>
+          <div>
+            <label class="block text-[10px] uppercase text-yellow-500/80 mb-1">ATTACH IMAGE (OPTIONAL)</label>
+            <input type="file" id="forumImageFile" accept="image/*" class="w-full text-xs text-yellow-500/80 file:mr-2 file:py-1 file:px-2 file:border file:border-yellow-600/50 file:bg-black file:text-yellow-500 file:text-[10px]">
+          </div>
+          <button type="submit" class="deco-btn py-2 text-xs uppercase font-bold">Inscribe To Salon</button>
+        </form>
+      </div>
+    </main>
+
+  </div>
+
+  <script>
+    // Initial Data & LocalStorage Loading
+    const defaultReviews = [
+      {
+        id: 1,
+        title: "THE GREAT GATSBY",
+        poster: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=600&auto=format&fit=crop",
+        rating: 5,
+        review: "A breathtaking visual spectacle bathed in opulence, tragic romance, and dazzling jazz-age grandiosity.",
+        comments: [{ name: "DAISY", text: "Truly dazzling. A masterpiece of production design." }]
+      }
+    ];
+
+    const defaultPosts = [
+      { name: "MARLON", text: "What is everyone's opinion on 1920s German Expressionism in modern set design?", image: "", time: "TODAY" }
+    ];
+
+    let reviewsData = JSON.parse(localStorage.getItem('cinemaReviews')) || defaultReviews;
+    let forumData = JSON.parse(localStorage.getItem('cinemaForum')) || defaultPosts;
+    let currentRating = 5;
+
+    function saveState() {
+      localStorage.setItem('cinemaReviews', JSON.stringify(reviewsData));
+      localStorage.setItem('cinemaForum', JSON.stringify(forumData));
+    }
+
+    // Navigation Switcher
+    function switchTab(tabName) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
+
+      document.getElementById(`tab-${tabName}`).classList.remove('hidden');
+      document.getElementById(`nav-${tabName}`).classList.add('active');
+
+      const subtitle = document.getElementById('page-subtitle');
+      if (tabName === 'reviews') subtitle.innerText = "EST. MCMXXVI — FILM REVIEWS & ARCHIVE";
+      if (tabName === 'art') { subtitle.innerText = "EST. MCMXXVI — VISUAL GALLERY & POSTERS"; renderGallery(); }
+      if (tabName === 'discussion') { subtitle.innerText = "EST. MCMXXVI — COMMUNITY SALON"; renderForum(); }
+    }
+
+    // Interactive Star Buttons
+    const starButtons = document.querySelectorAll('#starInput button');
+    starButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentRating = parseInt(btn.dataset.value);
+        document.getElementById('selectedRating').value = currentRating;
+        starButtons.forEach((b, idx) => {
+          if (idx < currentRating) b.classList.add('active');
+          else b.classList.remove('active');
+        });
+      });
+    });
+
+    // FILTERING & SORTING LOGIC
+    function applyFiltersAndSort() {
+      const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+      const ratingFilter = document.getElementById('filterRating').value;
+      const sortOption = document.getElementById('sortOption').value;
+
+      let filtered = reviewsData.filter(item => {
+        const matchesSearch = item.title.toLowerCase().includes(searchQuery) || item.review.toLowerCase().includes(searchQuery);
+        const matchesRating = ratingFilter === 'ALL' || item.rating === parseInt(ratingFilter);
+        return matchesSearch && matchesRating;
+      });
+
+      // Sorting
+      if (sortOption === 'NEWEST') filtered.sort((a, b) => b.id - a.id);
+      if (sortOption === 'OLDEST') filtered.sort((a, b) => a.id - b.id);
+      if (sortOption === 'HIGHEST') filtered.sort((a, b) => b.rating - a.rating);
+      if (sortOption === 'LOWEST') filtered.sort((a, b) => a.rating - b.rating);
+
+      renderReviews(filtered);
+    }
+
+    // RENDER REVIEWS
+    function renderReviews(listToRender = reviewsData) {
+      const container = document.getElementById('reviewsContainer');
+      container.innerHTML = '';
+
+      if (listToRender.length === 0) {
+        container.innerHTML = `<div class="deco-card p-6 text-center text-xs text-yellow-500/70 uppercase">No matching films found in archive.</div>`;
+        return;
+      }
+
+      listToRender.forEach(item => {
+        const starsHtml = '★'.repeat(item.rating) + '☆'.repeat(5 - item.rating);
+        const posterUrl = item.poster || 'https://via.placeholder.com/300x450/08080a/d4af37?text=NO+IMAGE';
+
+        const card = document.createElement('article');
+        card.className = "deco-card p-5 grid grid-cols-1 sm:grid-cols-12 gap-5 relative";
+        
+        card.innerHTML = `
+          <div class="deco-corner top-left"></div>
+          <div class="deco-corner top-right"></div>
+          <div class="deco-corner bottom-left"></div>
+          <div class="deco-corner bottom-right"></div>
+
+          <div class="sm:col-span-4 border border-yellow-600/40 p-1 bg-black/60 max-h-[260px]">
             <img src="${posterUrl}" alt="${item.title}" class="w-full h-full object-cover">
           </div>
 
-          <!-- Content Column -->
           <div class="sm:col-span-8 flex flex-col justify-between">
             <div>
-              <div class="flex items-start justify-between border-b border-yellow-600/30 pb-3 mb-3">
-                <h3 class="text-xl font-bold gold-gradient-text tracking-widest">${item.title}</h3>
-                <span class="text-yellow-500 font-bold tracking-widest text-lg">${starsHtml}</span>
+              <div class="flex items-start justify-between border-b border-yellow-600/30 pb-2 mb-2">
+                <h3 class="text-lg font-bold gold-gradient-text tracking-widest">${item.title}</h3>
+                <span class="text-yellow-500 font-bold tracking-widest text-base">${starsHtml}</span>
               </div>
-              <p class="text-zinc-300 text-sm leading-relaxed mb-6">${item.review}</p>
+              <p class="text-zinc-300 text-xs leading-relaxed mb-4">${item.review}</p>
             </div>
 
-            <!-- Comment Section -->
-            <div class="border-t border-yellow-600/30 pt-4">
-              <h4 class="text-xs uppercase tracking-[0.2em] text-yellow-500/80 mb-3">Discourse (${item.comments.length})</h4>
+            <div class="border-t border-yellow-600/30 pt-3">
+              <h4 class="text-[10px] uppercase tracking-[0.2em] text-yellow-500/80 mb-2">Discourse (${item.comments.length})</h4>
               
-              <!-- Existing Comments -->
-              <div class="space-y-2 mb-4 max-h-36 overflow-y-auto pr-1">
+              <div class="space-y-1.5 mb-3 max-h-28 overflow-y-auto pr-1">
                 ${item.comments.map(c => `
-                  <div class="bg-black/50 border-l-2 border-yellow-600 p-2 text-xs">
+                  <div class="bg-black/50 border-l-2 border-yellow-600 p-1.5 text-xs">
                     <span class="font-bold text-yellow-500 tracking-wider">${c.name}:</span> 
                     <span class="text-zinc-300">${c.text}</span>
                   </div>
                 `).join('')}
               </div>
 
-              <!-- Add Comment Form -->
               <form onsubmit="addComment(event, ${item.id})" class="flex gap-2">
                 <input type="text" placeholder="NAME" required class="comment-name w-1/3 px-2 py-1 text-xs uppercase">
                 <input type="text" placeholder="ADD COMMENT..." required class="comment-text w-2/3 px-2 py-1 text-xs">
-                <button type="submit" class="deco-btn px-3 py-1 text-[10px] uppercase">Post</button>
+                <button type="submit" class="deco-btn px-2 py-1 text-[9px] uppercase">Post</button>
               </form>
             </div>
           </div>
         `;
-
         container.appendChild(card);
       });
     }
 
-    // Handle Form Submit
-    document.getElementById('movieForm').addEventListener('submit', (e) => {
+    // RENDER GALLERY
+    function renderGallery() {
+      const container = document.getElementById('artGalleryContainer');
+      container.innerHTML = '';
+      reviewsData.forEach(item => {
+        if (item.poster) {
+          const card = document.createElement('div');
+          card.className = "deco-card p-3 relative";
+          card.innerHTML = `
+            <div class="deco-corner top-left"></div>
+            <div class="deco-corner top-right"></div>
+            <div class="deco-corner bottom-left"></div>
+            <div class="deco-corner bottom-right"></div>
+            <img src="${item.poster}" class="w-full h-64 object-cover mb-2 border border-yellow-600/30">
+            <h4 class="text-center font-bold gold-gradient-text text-xs tracking-wider">${item.title}</h4>
+          `;
+          container.appendChild(card);
+        }
+      });
+    }
+
+    // RENDER SALON
+    function renderForum() {
+      const container = document.getElementById('generalForumContainer');
+      container.innerHTML = '';
+      forumData.forEach(post => {
+        const msg = document.createElement('div');
+        msg.className = "bg-black/50 border-l-2 border-yellow-600 p-3";
+        msg.innerHTML = `
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-bold text-yellow-500 tracking-wider">${post.name}</span>
+            <span class="text-[9px] text-zinc-500">${post.time || 'JUST NOW'}</span>
+          </div>
+          <p class="text-xs text-zinc-300 mb-2">${post.text}</p>
+          ${post.image ? `<img src="${post.image}" class="max-h-48 border border-yellow-600/30 rounded mt-2">` : ''}
+        `;
+        container.appendChild(msg);
+      });
+    }
+
+    // ADD REVIEW WITH MEDIA FILE SUPPORT
+    document.getElementById('movieForm').addEventListener('submit', async (e) => {
       e.preventDefault();
       const title = document.getElementById('movieTitle').value.toUpperCase();
-      const poster = document.getElementById('moviePoster').value;
+      let poster = document.getElementById('moviePoster').value;
+      const fileInput = document.getElementById('moviePosterFile');
       const rating = parseInt(document.getElementById('selectedRating').value);
       const review = document.getElementById('movieReview').value;
 
-      sampleReviews.unshift({
-        id: Date.now(),
-        title,
-        poster,
-        rating,
-        review,
-        comments: []
-      });
+      // Handle local file upload if attached
+      if (fileInput.files && fileInput.files[0]) {
+        poster = await readFileAsBase64(fileInput.files[0]);
+      }
 
-      renderReviews();
+      reviewsData.unshift({ id: Date.now(), title, poster, rating, review, comments: [] });
+      saveState();
+      applyFiltersAndSort();
       e.target.reset();
-      updateStarUI(5);
     });
 
-    // Handle Comments
+    // ADD COMMENT
     function addComment(e, movieId) {
       e.preventDefault();
       const form = e.target;
       const name = form.querySelector('.comment-name').value.toUpperCase();
       const text = form.querySelector('.comment-text').value;
 
-      const movie = sampleReviews.find(m => m.id === movieId);
+      const movie = reviewsData.find(m => m.id === movieId);
       if (movie) {
         movie.comments.push({ name, text });
-        renderReviews();
+        saveState();
+        applyFiltersAndSort();
       }
     }
 
-    renderReviews();
+    // ADD SALON POST WITH MEDIA SUPPORT
+    document.getElementById('forumForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = document.getElementById('forumName').value.toUpperCase();
+      const text = document.getElementById('forumText').value;
+      const fileInput = document.getElementById('forumImageFile');
+      let image = "";
+
+      if (fileInput.files && fileInput.files[0]) {
+        image = await readFileAsBase64(fileInput.files[0]);
+      }
+
+      forumData.unshift({ name, text, image, time: 'JUST NOW' });
+      saveState();
+      renderForum();
+      e.target.reset();
+    });
+
+    // Helper to Convert Local Images to Data URIs
+    function readFileAsBase64(file) {
+      return new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.onload = (e) => resolve(e.target.result);
+        reader.readAsDataURL(file);
+      });
+    }
+
+    // Initial Render
+    applyFiltersAndSort();
   </script>
 </body>
 </html>
